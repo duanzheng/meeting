@@ -2,43 +2,44 @@ Page({
     data: {
         dateList: [
             {
-                id: 0,
+                id: '05-13',
                 text: '今天05-13',
                 select: true
             },
             {
-                id: 1,
+                id: '05-14',
                 text: '05-14',
                 select: false
             },
             {
-                id: 2,
+                id: '05-15',
                 text: '05-15',
                 select: false
             },
             {
-                id: 3,
+                id: '05-16',
                 text: '05-16',
                 select: false
             },
             {
-                id: 4,
+                id: '05-17',
                 text: '05-17',
                 select: false
             },
             {
-                id: 5,
+                id: '05-18',
                 text: '05-18',
                 select: false
             },
             {
-                id: 6,
+                id: '05-19',
                 text: '05-19',
                 select: false
             },
         ],
         roomList: [],
-        curDate: '05-13'
+        curDate: '05-13',
+        classDateSelect: 'select'
     },
     selectDate: function (e) {
         var selectId = e.currentTarget.id;
@@ -51,8 +52,10 @@ Page({
             }
         }
         this.setData({
-            dateList: oriDateList
+            dateList: oriDateList,
+            curDate: selectId
         });
+        this.getPageData();
     },
     //firstTime大于secondTime则返回true
     transformTime: function (oriTime) {
@@ -70,12 +73,15 @@ Page({
         return ret;
     },
     onShow: function () {
+        this.getPageData();
+    },
+    getPageData: function () {
         var that = this;
         wx.showLoading({
             title: '加载中'
         });
         wx.request({
-            url: 'http://127.0.0.1:3000/roomList/05-13',
+            url: 'http://127.0.0.1:3000/roomList/' + this.data.curDate,
             success: function (result) {
                 wx.hideLoading();
                 var roomList = result.data;
@@ -102,16 +108,6 @@ Page({
                     roomList: roomList
                 })
             }
-        });
-
-        var timeList = [];
-        for (var i = 9; i <= 21; i++) {
-            timeList.push({
-                value: i
-            });
-        }
-        this.setData({
-            timeList: timeList
         });
     }
 })

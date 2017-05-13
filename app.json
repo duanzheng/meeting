@@ -61,7 +61,8 @@
     "page/API/pages/choose-location/choose-location",
     "page/API/pages/storage/storage",
     "page/roomDetail/roomDetail",
-    "page/mine/mine"
+    "page/mine/mine",
+    "page/search/search"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -79,6 +80,12 @@
         "iconPath": "image/icon_component.png",
         "selectedIconPath": "image/icon_component_HL.png",
         "text": "预订"
+      },
+      {
+        "pagePath": "page/search/search",
+        "iconPath": "image/icon_component.png",
+        "selectedIconPath": "image/icon_component_HL.png",
+        "text": "查找"
       },
       {
         "pagePath": "page/mine/mine",

@@ -1,0 +1,9 @@
+/* search.wxss */
+.search-container {
+    margin-top: 40rpx;
+}
+
+.btn-search {
+    margin-top: 40rpx;
+    padding: 0 20rpx;
+}

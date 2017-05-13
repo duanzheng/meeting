@@ -1,7 +1,7 @@
 <view class="index">
   	<scroll-view class="date-container" scroll-x="true" style="width: 100%">
 	    <block wx:for="{{dateList}}" wx:key="{{item.key}}">
-	      <view id="{{item.id}}" class="date-item" bindtap="selectDate">
+	      <view id="{{item.id}}" class="date-item {{item.select ? classDateSelect : null}}" bindtap="selectDate">
 	        {{item.text}}
 	        <block wx:if="{{item.select}}">
 	        	<view class="data-item-mark"></view>

@@ -13,12 +13,16 @@
 	text-align: center;
 }
 
+.date-item.select {
+	color: #009900;
+}
+
 .data-item-mark {
 	position: absolute;
 	width: 100%;
 	bottom: 0;
 	height: 5rpx;
-	background-color: #666666;
+	background-color: #009900;
 }
 
 .room-list {
