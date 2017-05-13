@@ -11,30 +11,32 @@
 	</scroll-view>
 	<view class="room-list">
 		<block wx:for="{{roomList}}" wx:key="{{item.roomId}}">
-			<view class="room-item">
-				<view class="fa fa-university room-icon"></view>
-				<view class="room-msg">
-					<view class="room-name">
-						{{item.name}}
-					</view>
-					<view class="room-desc">
-						可容纳：{{item.fill}}人，可用设备：{{item.equip}}
-					</view>
-				</view>
-				<view class="room-record">
-					<block wx:for="{{item.timeList}}" wx:for-item="timeItem" wx:key="{{timeItem.value}}">
-						<view class="record-item">
-							<view>
-								{{timeItem.value}}
-							</view>
-							<view wx:if="{{timeItem.am}}" class="record-am active"></view>
-							<view wx:else class="record-am"></view>
-							<view wx:if="{{timeItem.pm}}" class="record-pm active"></view>
-							<view wx:else class="record-pm"></view>
+			<navigator url="../roomDetail/roomDetail?roomId={{item.roomId}}">
+				<view class="room-item">
+					<view class="fa fa-university room-icon"></view>
+					<view class="room-msg">
+						<view class="room-name">
+							{{item.name}}
 						</view>
-					</block>
+						<view class="room-desc">
+							可容纳：{{item.fill}}人，可用设备：{{item.equip}}
+						</view>
+					</view>
+					<view class="room-record">
+						<block wx:for="{{item.timeList}}" wx:for-item="timeItem" wx:key="{{timeItem.value}}">
+							<view class="record-item">
+								<view>
+									{{timeItem.value}}
+								</view>
+								<view wx:if="{{timeItem.am}}" class="record-am active"></view>
+								<view wx:else class="record-am"></view>
+								<view wx:if="{{timeItem.pm}}" class="record-pm active"></view>
+								<view wx:else class="record-pm"></view>
+							</view>
+						</block>
+					</view>
 				</view>
-			</view>
+			</navigator>
 		</block>
 	</view>
 </view>
