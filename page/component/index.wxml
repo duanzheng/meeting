@@ -11,7 +11,7 @@
 	</scroll-view>
 	<view class="room-list">
 		<block wx:for="{{roomList}}" wx:key="{{item.roomId}}">
-			<navigator url="../roomDetail/roomDetail?roomId={{item.roomId}}">
+			<navigator url="../roomDetail/roomDetail?roomId={{item.roomId}}&date={{curDate}}">
 				<view class="room-item">
 					<view class="fa fa-university room-icon"></view>
 					<view class="room-msg">

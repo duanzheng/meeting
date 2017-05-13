@@ -1,39 +1,48 @@
 <!--roomDetail.wxml-->
 <view>
-	<view class="header">
-		<view class="header-icon fa fa-university"></view>
-		<view class="header-msg">
-			<view class="header-name">
-				彗星
-			</view>
-			<view class="header-desc">
-				描述：萨达所大
-			</view>
-		</view>
-	</view>
-	<view class="weui-cells weui-cells_after-title">
-		<view class="weui-cell weui-cell_input">
-			<view class="weui-cell__hd">
-		        <view class="weui-label">会议主题</view>
-		      </view>
-			<view class="weui-cell__bd">
-				<input class="weui-input" placeholder="请输入会议主题" />
-			</view>
-		</view>
-	</view>
-	<view class="weui-cells weui-cells_after-title">
-	    <view class="weui-cell weui-cell_input">
-	      <view class="weui-cell__hd">
-	        <view class="weui-label">会议日期</view>
-	      </view>
-	      <view class="weui-cell__bd">
-	        <picker mode="date" value="{{curDate}}" start="{{curDate}}" end="2017-09-01" bindchange="bindDateChange">
-	          <view class="weui-input">{{curDate}}</view>
-	        </picker>
-	      </view>
-	    </view>
-	  </view>
-	  <view>
-	  	
-	  </view>
+    <view class="header">
+        <view class="header-icon fa fa-university"></view>
+        <view class="header-msg">
+            <view class="header-name">
+                {{name}}
+            </view>
+            <view class="header-desc">
+                {{desc}}
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">会议主题</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入会议主题"/>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">会议日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{curDate}}" start="{{curDate}}" end="2017-09-01"
+                        bindchange="bindDateChange">
+                    <view class="weui-input">{{curDate}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="date-container weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">时段</view>
+            </view>
+            <view class="date-title weui-cell__bd">
+                点击时间段选择预订时间
+            </view>
+        </view>
+
+    </view>
 </view>
