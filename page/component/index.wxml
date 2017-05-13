@@ -1,0 +1,40 @@
+<view class="index">
+  	<scroll-view class="date-container" scroll-x="true" style="width: 100%">
+	    <block wx:for="{{dateList}}" wx:key="{{item.key}}">
+	      <view id="{{item.id}}" class="date-item" bindtap="selectDate">
+	        {{item.text}}
+	        <block wx:if="{{item.select}}">
+	        	<view class="data-item-mark"></view>
+	        </block>
+	      </view>
+	    </block>
+	</scroll-view>
+	<view class="room-list">
+		<block wx:for="{{roomList}}" wx:key="{{item.roomId}}">
+			<view class="room-item">
+				<view class="fa fa-university room-icon"></view>
+				<view class="room-msg">
+					<view class="room-name">
+						{{item.name}}
+					</view>
+					<view class="room-desc">
+						可容纳：{{item.fill}}人，可用设备：{{item.equip}}
+					</view>
+				</view>
+				<view class="room-record">
+					<block wx:for="{{item.timeList}}" wx:for-item="timeItem" wx:key="{{timeItem.value}}">
+						<view class="record-item">
+							<view>
+								{{timeItem.value}}
+							</view>
+							<view wx:if="{{timeItem.am}}" class="record-am active"></view>
+							<view wx:else class="record-am"></view>
+							<view wx:if="{{timeItem.pm}}" class="record-pm active"></view>
+							<view wx:else class="record-pm"></view>
+						</view>
+					</block>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

@@ -1,0 +1,80 @@
+.date-container {
+	white-space: nowrap;
+}
+
+.date-item {
+	position: relative;
+	display: inline-block;
+	width: 200rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+}
+
+.data-item-mark {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	height: 5rpx;
+	background-color: #666666;
+}
+
+.room-list {
+	padding: 40rpx;
+}
+
+.room-item {
+	margin-bottom: 20rpx;
+}
+
+.room-icon {
+	font-size: 60rpx;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.room-msg {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 20rpx;
+}
+
+.room-name {
+	font-weight: bold;
+}
+
+.room-desc {
+	font-size: 26rpx;
+	color: #666666;
+}
+
+.room-record {
+	position: relative;
+	width: 100%;
+}
+
+.record-item {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 7.692%;
+	text-align: center;
+	padding: 0 4rpx;
+}
+
+.record-am {
+	height: 100rpx;
+	background-color: #CCCCCC;
+}
+
+.record-am.active {
+	background-color: #00CC00;
+}
+
+.record-pm {
+	height: 100rpx;
+	background-color: #999999;
+}
+
+.record-pm.active {
+	background-color: #00CC00;
+}
