@@ -69,12 +69,15 @@ Page({
         }
         return ret;
     },
-    onReady: function () {
+    onShow: function () {
         var that = this;
+        wx.showLoading({
+            title: '加载中…'
+        });
         wx.request({
             url: 'http://127.0.0.1:3000/roomList/05-13',
             success: function (result) {
-                console.log(result);
+                wx.hideLoading();
                 var roomList = result.data;
                 for (var i = 0; i < roomList.length; i++) {
                     var roomRecord = roomList[i].record;
@@ -92,10 +95,9 @@ Page({
                             am: am,
                             pm: pm
                         });
-                        roomList[i].timeList = timeList;
                     }
+                    roomList[i].timeList = timeList;
                 }
-                console.log(roomList);
                 that.setData({
                     roomList: roomList
                 })

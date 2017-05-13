@@ -17,7 +17,7 @@
                 <view class="weui-label">会议主题</view>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="请输入会议主题"/>
+                <input class="weui-input" placeholder="请输入会议主题" bindinput="themeInput"/>
             </view>
         </view>
     </view>
@@ -40,9 +40,26 @@
                 <view class="weui-label">时段</view>
             </view>
             <view class="date-title weui-cell__bd">
-                点击时间段选择预订时间
+                {{selectTimeText}}
             </view>
         </view>
-
+        <view>
+            <block wx:for="{{timeList}}" wx:for-item="timeItem" wx:key="{{timeItem.value}}">
+                <view class="record-item">
+                    <view>
+                        {{timeItem.value}}
+                    </view>
+                    <view wx:if="{{timeItem.am}}" bindtap="tapdate" class="record-am active"></view>
+                    <view wx:elif="{{timeItem.selectAm}}" id="{{timeItem.value}}-0" bindtap="tapdate" class="record-am select"></view>
+                    <view wx:else id="{{timeItem.value}}-0" class="record-am" bindtap="tapdate"></view>
+                    <view wx:if="{{timeItem.pm}}" bindtap="tapdate" class="record-pm active"></view>
+                    <view wx:elif="{{timeItem.selectPm}}" id="{{timeItem.value}}-1" bindtap="tapdate" class="record-pm select"></view>
+                    <view wx:else id="{{timeItem.value}}-1" class="record-pm" bindtap="tapdate"></view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="btn-ensure">
+        <button type="primary" bindtap="submit">确定</button>
     </view>
 </view>

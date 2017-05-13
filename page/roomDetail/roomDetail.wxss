@@ -29,9 +29,48 @@
 
 .date-container {
 	margin-top: 20rpx;
+    padding:0 4rpx 20rpx;
 }
 
 .date-title {
-	height: 88rpx;
+	min-height: 88rpx;
 	line-height: 88rpx;
+}
+
+.record-item {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 7.692%;
+	text-align: center;
+	padding: 0 4rpx;
+}
+
+.record-am {
+	height: 150rpx;
+	background-color: #CCCCCC;
+}
+
+.record-am.active {
+	background-color: #00CC00;
+}
+
+.record-am.select {
+    background-color: #3d37cc;
+}
+
+.record-pm {
+	height: 150rpx;
+	background-color: #999999;
+}
+
+.record-pm.active {
+	background-color: #00CC00;
+}
+
+.record-pm.select {
+    background-color: #3d37cc;
+}
+
+.btn-ensure {
+    padding: 0 20rpx;
 }
