@@ -139,6 +139,9 @@ Page({
     },
     submit: function () {
         var that = this;
+        wx.showLoading({
+            title: '正在提交'
+        });
         wx.request({
             url: 'http://127.0.0.1:3000/addRecord',
             data: {
@@ -149,8 +152,12 @@ Page({
                 timeList: this.data.selectTimeList
             },
             success: function (result) {
-                if (result.success === 1) {
-                    
+                wx.hideLoading();
+                console.log(result);
+                if (result.data.success === 1) {
+                    wx.navigateBack({
+                        delta: 1
+                    })
                 }
             }
         });

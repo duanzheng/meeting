@@ -72,7 +72,7 @@ Page({
     onShow: function () {
         var that = this;
         wx.showLoading({
-            title: '加载中…'
+            title: '加载中'
         });
         wx.request({
             url: 'http://127.0.0.1:3000/roomList/05-13',

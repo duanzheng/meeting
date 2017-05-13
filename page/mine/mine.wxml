@@ -1,0 +1,23 @@
+<!--mine.wxml-->
+<view>
+    <block wx:for="{{recordList}}">
+        <view class="record-item">
+            <view class="record-header">
+                <view class="fa fa-university header-icon"></view>
+                <view class="header-theme">
+                    {{item.theme}}
+                </view>
+            </view>
+            <view class="record-content">
+                <view>
+                    <text>时间：</text>
+                    <text>{{item.date}}  {{item.startTime}}-{{item.endTime}}</text>
+                </view>
+                <view>
+                    <text>地点：</text>
+                    <text>{{item.roomName}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

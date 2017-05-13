@@ -1,13 +1,15 @@
 .date-container {
 	white-space: nowrap;
+	box-shadow: 0 0 6rpx 0 #888;
+	margin-bottom: 6rpx;
 }
 
 .date-item {
 	position: relative;
 	display: inline-block;
 	width: 200rpx;
-	height: 60rpx;
-	line-height: 60rpx;
+	height: 80rpx;
+	line-height: 80rpx;
 	text-align: center;
 }
 
