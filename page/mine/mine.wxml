@@ -7,6 +7,7 @@
                 <view class="header-theme">
                     {{item.theme}}
                 </view>
+                <button id="{{item.recordId}}" class="mini-btn btn-cancel" type="default" size="mini" bindtap="cancel">取消会议</button>
             </view>
             <view class="record-content">
                 <view>

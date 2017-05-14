@@ -84,3 +84,7 @@
 .record-pm.active {
 	background-color: #00CC00;
 }
+
+.scan-container {
+	padding: 20rpx 40rpx;
+}

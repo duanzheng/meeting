@@ -2,14 +2,9 @@ Page({
     data: {
         dateList: [
             {
-                id: '05-13',
-                text: '今天05-13',
-                select: true
-            },
-            {
                 id: '05-14',
-                text: '05-14',
-                select: false
+                text: '今天05-14',
+                select: true
             },
             {
                 id: '05-15',
@@ -36,9 +31,14 @@ Page({
                 text: '05-19',
                 select: false
             },
+            {
+                id: '05-20',
+                text: '05-20',
+                select: false
+            }
         ],
         roomList: [],
-        curDate: '05-13',
+        curDate: '05-14',
         classDateSelect: 'select'
     },
     selectDate: function (e) {
@@ -77,13 +77,13 @@ Page({
     },
     getPageData: function () {
         var that = this;
-        wx.showLoading({
-            title: '加载中'
-        });
+        // wx.showLoading({
+        //     title: '加载中'
+        // });
         wx.request({
             url: 'http://127.0.0.1:3000/roomList/' + this.data.curDate,
             success: function (result) {
-                wx.hideLoading();
+                // wx.hideLoading();
                 var roomList = result.data;
                 for (var i = 0; i < roomList.length; i++) {
                     var roomRecord = roomList[i].record;
@@ -109,6 +109,22 @@ Page({
                 })
             }
         });
+    },
+    scanCode: function () {
+        const that = this;
+        wx.scanCode({
+            success: function (res) {
+                const result = JSON.parse(res.result);
+                if (result) {
+                    const roomId = result.roomId;
+                    wx.navigateTo({
+                        url: `../roomDetail/roomDetail?roomId=${roomId}&date=${that.data.curDate}`
+                    });
+                }
+            },
+            fail: function (res) {
+            }
+        })
     }
 })
 

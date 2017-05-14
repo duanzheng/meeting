@@ -7,3 +7,63 @@
     margin-top: 40rpx;
     padding: 0 20rpx;
 }
+
+.room-list {
+    padding: 40rpx;
+}
+
+.room-item {
+    margin-bottom: 20rpx;
+}
+
+.room-icon {
+    font-size: 60rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.room-msg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20rpx;
+}
+
+.room-name {
+    font-weight: bold;
+}
+
+.room-desc {
+    font-size: 26rpx;
+    color: #666666;
+}
+
+.room-record {
+    position: relative;
+    width: 100%;
+}
+
+.record-item {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 7.692%;
+    text-align: center;
+    padding: 0 4rpx;
+}
+
+.record-am {
+    height: 100rpx;
+    background-color: #CCCCCC;
+}
+
+.record-am.active {
+    background-color: #00CC00;
+}
+
+.record-pm {
+    height: 100rpx;
+    background-color: #999999;
+}
+
+.record-pm.active {
+    background-color: #00CC00;
+}

@@ -27,7 +27,7 @@
                 <view class="weui-label">会议日期</view>
             </view>
             <view class="weui-cell__bd">
-                <picker mode="date" value="{{curDate}}" start="{{curDate}}" end="2017-09-01"
+                <picker mode="date" value="{{curDate}}" start="2017-05-13" end="2017-09-01"
                         bindchange="bindDateChange">
                     <view class="weui-input">{{curDate}}</view>
                 </picker>

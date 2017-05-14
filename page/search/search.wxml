@@ -6,8 +6,8 @@
                 <view class="weui-label">会议日期</view>
             </view>
             <view class="weui-cell__bd">
-                <picker mode="date" value="{{curDate}}" start="{{curDate}}" end="2017-09-01" bindchange="bindDateChange">
-                    <view class="weui-input">{{curDate}}</view>
+                <picker mode="date" value="{{curFullDate}}" start="2017-05-13" end="2017-09-01" bindchange="bindDateChange">
+                    <view class="weui-input">{{curFullDate}}</view>
                 </picker>
             </view>
         </view>
@@ -50,5 +50,35 @@
     </view>
     <view class="btn-search">
         <button type="primary" bindtap="submit">开始查找</button>
+    </view>
+    <view class="room-list">
+        <block wx:for="{{roomList}}" wx:key="{{item.roomId}}">
+            <navigator url="../roomDetail/roomDetail?roomId={{item.roomId}}&date={{curDate}}">
+                <view class="room-item">
+                    <view class="fa fa-university room-icon"></view>
+                    <view class="room-msg">
+                        <view class="room-name">
+                            {{item.name}}
+                        </view>
+                        <view class="room-desc">
+                            可容纳：{{item.fill}}人，可用设备：{{item.equip}}
+                        </view>
+                    </view>
+                    <view class="room-record">
+                        <block wx:for="{{item.timeList}}" wx:for-item="timeItem" wx:key="{{timeItem.value}}">
+                            <view class="record-item">
+                                <view>
+                                    {{timeItem.value}}
+                                </view>
+                                <view wx:if="{{timeItem.am}}" class="record-am active"></view>
+                                <view wx:else class="record-am"></view>
+                                <view wx:if="{{timeItem.pm}}" class="record-pm active"></view>
+                                <view wx:else class="record-pm"></view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </navigator>
+        </block>
     </view>
 </view>

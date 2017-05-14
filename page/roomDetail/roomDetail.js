@@ -30,6 +30,7 @@ Page({
         this.setData({
             curDate: e.detail.value
         })
+        this.getRoomMsg();
     },
     //firstTime大于secondTime则返回true
     transformTime: function (oriTime) {
