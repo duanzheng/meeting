@@ -1,45 +1,36 @@
 Page({
     data: {
-        dateList: [
-            {
-                id: '05-14',
-                text: '今天05-14',
-                select: true
-            },
-            {
-                id: '05-15',
-                text: '05-15',
-                select: false
-            },
-            {
-                id: '05-16',
-                text: '05-16',
-                select: false
-            },
-            {
-                id: '05-17',
-                text: '05-17',
-                select: false
-            },
-            {
-                id: '05-18',
-                text: '05-18',
-                select: false
-            },
-            {
-                id: '05-19',
-                text: '05-19',
-                select: false
-            },
-            {
-                id: '05-20',
-                text: '05-20',
-                select: false
-            }
-        ],
+        dateList: [],
         roomList: [],
         curDate: '05-14',
         classDateSelect: 'select'
+    },
+    onLoad: function () {
+        this.getCurDate();
+    },
+    disposeDate: function (oriDate) {
+        return oriDate < 10 ? '0' + oriDate : oriDate
+    },
+    getCurDate() {
+        const date = new Date();
+        const oriDay = date.getDate();
+        const month = this.disposeDate(date.getMonth() + 1);
+        const day = this.disposeDate(oriDay);
+        const curDate = month + '-' + day;
+        const dateList = [];
+
+        for (let i = 0; i < 7; i++) {
+            dateList.push({
+                id: month + '-' + this.disposeDate(oriDay + i),
+                text: (i === 0 ? '今天' : '') + month + '-' + this.disposeDate(oriDay + i),
+                select: i === 0
+            })
+        }
+        this.setData({
+            curDate: curDate,
+            dateList
+        });
+        console.log(dateList);
     },
     selectDate: function (e) {
         var selectId = e.currentTarget.id;

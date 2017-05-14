@@ -65,9 +65,7 @@
     "page/search/search"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "演示",
-    "navigationBarBackgroundColor": "#FFFFFF"
+    "navigationBarTitleText": "会议室预订"
   },
   "tabBar": {
     "color": "#7A7E83",
