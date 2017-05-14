@@ -1,6 +1,6 @@
 <!--mine.wxml-->
 <view>
-    <block wx:for="{{recordList}}">
+    <block wx:for="{{recordList}}" wx:key="{{item.recordId}}">
         <view class="record-item">
             <view class="record-header">
                 <view class="fa fa-university header-icon"></view>

@@ -23,7 +23,6 @@ Page({
                 userId: "Tony段"
             },
             success: function (result) {
-                console.log(result);
                 that.setData({
                     recordList: result.data
                 });
@@ -34,7 +33,6 @@ Page({
     cancel: function (e) {
         const that = this;
         const recordId = e.target.id;
-        console.log(recordId);
         wx.showModal({
             content: "您确定要取消此次会议吗？",
             confirmText: "确定",
