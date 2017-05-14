@@ -30,7 +30,7 @@
                 <view class="weui-label">结束时间</view>
             </view>
             <view class="weui-cell__bd">
-                <picker mode="time" value="{{endTime}}" start="09:00" end="21:00" bindchange="bindEndTime">
+                <picker mode="time" value="{{endTime}}" start="{{startTime}}" end="21:00" bindchange="bindEndTime">
                     <view class="weui-input">{{endTime}}</view>
                 </picker>
             </view>

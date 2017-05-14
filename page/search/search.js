@@ -25,13 +25,13 @@ Page({
     bindStartTime: function (e) {
         this.setData({
             startTime: e.detail.value
-        })
+        });
     },
 
     bindEndTime: function (e) {
         this.setData({
             endTime: e.detail.value
-        })
+        });
     },
 
     bindDuration: function (e) {
