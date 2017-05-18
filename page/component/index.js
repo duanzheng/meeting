@@ -75,31 +75,33 @@ Page({
             url: 'http://127.0.0.1:3000/roomList/' + this.data.curDate,
             success: function (result) {
                 // wx.hideLoading();
-                var roomList = result.data;
-                for (var i = 0; i < roomList.length; i++) {
-                    var roomRecord = roomList[i].record;
-                    var timeList = [];
-                    for (var j = 9; j <= 21; j++) {
-                        var am = false;
-                        var pm = false;
-
-                        for (var k = 0; k < roomRecord.length; k++) {
-                            am = am || that.judgeInterval(j, 0, roomRecord[k].startTime, roomRecord[k].endTime);
-                            pm = pm || that.judgeInterval(j, 1, roomRecord[k].startTime, roomRecord[k].endTime);
-                        }
-                        timeList.push({
-                            value: j,
-                            am: am,
-                            pm: pm
-                        });
-                    }
-                    roomList[i].timeList = timeList;
-                }
-                that.setData({
-                    roomList: roomList
-                })
+                that.setRoomListData(result.data)
             }
         });
+    },
+    setRoomListData: function (roomList) {
+        for (var i = 0; i < roomList.length; i++) {
+            var roomRecord = roomList[i].record;
+            var timeList = [];
+            for (var j = 9; j <= 21; j++) {
+                var am = false;
+                var pm = false;
+
+                for (var k = 0; k < roomRecord.length; k++) {
+                    am = am || this.judgeInterval(j, 0, roomRecord[k].startTime, roomRecord[k].endTime);
+                    pm = pm || this.judgeInterval(j, 1, roomRecord[k].startTime, roomRecord[k].endTime);
+                }
+                timeList.push({
+                    value: j,
+                    am: am,
+                    pm: pm
+                });
+            }
+            roomList[i].timeList = timeList;
+        }
+        this.setData({
+            roomList: roomList
+        })
     },
     scanCode: function () {
         const that = this;
